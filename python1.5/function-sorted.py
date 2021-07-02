@@ -46,8 +46,10 @@ L2 = sorted(L, key=by_name)
 print(L2)
 
 def by_score(t):
-    score = t[1]
-    return - score #默认按照从小到大的排序
+    return t[1]
+    # score = t[1]
+    # return score 
 
-L2 = sorted(L, key=by_score)
+# 默认按照从小到大的排序
+L2 = sorted(L, key=by_score,reverse=True)
 print(L2)
