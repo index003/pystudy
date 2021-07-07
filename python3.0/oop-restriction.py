@@ -24,13 +24,18 @@ class Student(object):
 
     def set_name(self,name):
         self.__name = name
+        
     def set_score(self,score):
         if 0 <= score <= 100:
             self.__score = score
         else:
             raise ValueError('bad score')
+
     def set_gender(self,gender):
-        self.__gender = gender
+        if gender in ('male','female'):
+            self.__gender = gender
+        else:
+            raise ValueError('输入有误,请输入:female 或着 male')
     
 
     def print_score(self):
