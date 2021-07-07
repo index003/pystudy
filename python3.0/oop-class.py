@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-' about class and instance '
+' 类和实例'
 
 __author__ = 'Victor Wu'
 

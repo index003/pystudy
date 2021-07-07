@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-' about class and instance '
+' 访问限制'
 
 __author__ = 'Victor Wu'
 
@@ -24,7 +24,7 @@ class Student(object):
 
     def set_name(self,name):
         self.__name = name
-        
+
     def set_score(self,score):
         if 0 <= score <= 100:
             self.__score = score
