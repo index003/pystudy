@@ -10,7 +10,7 @@ __author__ = 'Victor Wu'
 # 通常，如果没有合适的继承类，就使用object类，这是所有类最终都会继承的类。
 
 class Student(object):
-# 在创建实例的时候，把一些我们认为必须绑定的属性强制填写进去。
+# 在创建实例的时候，把一些我们认为必须绑定的属性强制填写进去。### 所以__init__也可以不写 ###
 # 通过定义一个特殊的__init__方法
     def __init__(self,name,score):
         self.name = name
