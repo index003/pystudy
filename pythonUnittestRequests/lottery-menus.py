@@ -28,7 +28,7 @@ class TestMenus(unittest.TestCase):     #定义一个类，类的首字母要大
         r = requests.get(self.base_url, params=datalist, headers=head)     #传入参数
         result = json.loads(r.text)            #使用json格式返回
         self.assertEqual(result['rspCode'], '0000')      #检验返回值
-        # print(result)
+        print(result)
 
 if __name__ == '__main__':
       unittest.main()
