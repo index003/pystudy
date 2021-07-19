@@ -54,8 +54,8 @@ if __name__ == '__main__':
 
     filepath = "./htmlreport.html"
     print(filepath)
-    
-    # fp = open(filepath,'wb')
+
+    # fp = open(filepath,'wb')  # 这种方式不严谨，最好用try。。。catch，用with的方式更方便
     # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='first test')
     # runner.run(suite)
     # fp.close()
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         # 定义测试报告
         runner = HTMLTestRunner.HTMLTestRunner(
             stream=wf,
-             title="用户交易接口测试报告",
-             description="测试用例执行情况："
+            title="用户交易接口测试报告",
+            description="测试用例执行情况："
         )
         runner.run(suite)
