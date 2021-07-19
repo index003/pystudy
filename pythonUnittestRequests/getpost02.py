@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'使用类封装接口测试脚本'
+'在getpost01的基础上，使用类封装接口测试脚本'
 
 __author__ = 'Victor Wu'
 
@@ -9,9 +9,10 @@ import json
 class RunMain():
     def __init__(self,base_url,method,datalist=None):
         self.res = self.run_main(baseurl,'GET',datalist)
+        #self.res = self.run_main(baseurl,'POST',datalist)
 
     def send_get(self,base_url,datalist):
-        res = requests.get(url=base_url, data=datalist).json()
+        res = requests.get(url=base_url, params=datalist).json()
         return json.dumps(res,sort_keys=True,indent=2)
 
     def send_post(self,base_url,datalist):
@@ -29,12 +30,14 @@ class RunMain():
 if __name__ == '__main__':
 
     baseurl = 'http://httpbin.org/get'
+    #baseurl = 'http://httpbin.org/post'
     datalist = {
         'name':'zhangsan',
         'age':'25'
     }
     run = RunMain(baseurl,'GET',datalist)
-    #print(run.run_main(baseurl,'GET',datalist))
+    #run = RunMain(baseurl,'POST',datalist)
     print('=================================')
     print(run.res)
-    #print(run.run_main(baseurl,'GET'))
+    print('=================================')
+    print(run.run_main(baseurl,'GET',datalist))
