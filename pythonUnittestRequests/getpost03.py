@@ -4,10 +4,10 @@
 
 __author__ = 'Victor Wu'
 
-from getpost02 import RunMain
+import unittest
 import requests
 import json
-import unittest
+from getpost02 import RunMain
 
 class TestMethod(unittest.TestCase):
     pass
