@@ -27,7 +27,7 @@ class RunMain():
             res = self.send_post(base_url,datalist)
         return res
 
-if __name__ == '__main__':
+if __name__ == '__main__':  #本方法内使用
 
     baseurl = 'http://httpbin.org/get'
     #baseurl = 'http://httpbin.org/post'

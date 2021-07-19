@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'使用类封装接口测试脚本'
+'unittest 使用框架'
 
 __author__ = 'Victor Wu'
 
