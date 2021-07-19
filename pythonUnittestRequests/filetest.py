@@ -26,3 +26,7 @@ public_path = os.path.dirname(os.path.abspath(sys.argv[0]))
 print(public_path)
 filename = public_path + "\\Report\\" + "report.html"  
 print(filename)
+
+with open('./test.txt','r') as f:
+    for line in f.readlines():
+        print(line)
