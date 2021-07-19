@@ -6,6 +6,7 @@
 __author__ = 'Victor Wu'
 
 import requests
+import json
 
 # Requests是用python语言基于urllib编写的，
 # 采用的是Apache2 Licensed开源协议的HTTP库，
@@ -48,8 +49,10 @@ data = {
 }
 
 response = requests.get(url,params=data)
-
+print('response.text ===>',response.text)
 response.encoding = 'utf-8'
+print(type(json.loads(response.text)))
+print(json.loads(response.text))
 print(response.text)
 # print(response.cookies)
 print('=========================================')
