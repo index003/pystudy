@@ -42,3 +42,4 @@ datalist = {
     }
 result_post = run_main(baseurl,'POST',datalist)
 print(result_post)
+print(type(result_post))

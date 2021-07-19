@@ -29,6 +29,7 @@ class TestMethod(unittest.TestCase):
         }
         res = self.run.run_main(baseurl,'POST',datalist)
         print(res)
+        print(type(res))
 
 if __name__ == '__main__':
     unittest.main()
