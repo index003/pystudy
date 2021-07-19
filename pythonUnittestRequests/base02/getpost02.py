@@ -28,7 +28,7 @@ class RunMain():
             res = self.send_get(base_url,datalist)
         else:   
             res = self.send_post(base_url,datalist)
-        return res
+        return json.loads(res)  # 如果返回res，最后打印的结果就是str类型，不好匹配
 
 '''
 if __name__ == '__main__':  #本方法内使用

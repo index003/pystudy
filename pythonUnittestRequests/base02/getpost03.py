@@ -21,6 +21,8 @@ class TestMethod(unittest.TestCase):
         res = self.run.run_main(baseurl,'GET',datalist)
         print(res)
 
+        self.assertEqual(res['args']['age'], '25','Passed')
+
     def test_02(self):
         baseurl = 'http://httpbin.org/post'
         datalist = {
@@ -30,6 +32,7 @@ class TestMethod(unittest.TestCase):
         res = self.run.run_main(baseurl,'POST',datalist)
         print(res)
         print(type(res))
+        self.assertEqual(res['form']['age'], '26','Failed')
 
 if __name__ == '__main__':
     unittest.main()
