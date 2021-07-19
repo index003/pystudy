@@ -30,8 +30,8 @@ datalist = {
         'name':'zhangsan',
         'age':'25'
     }
-
-print(run_main(baseurl,'GET',datalist))
+result_get = run_main(baseurl,'GET',datalist)
+print(result_get)
 
 print("==============================")
 
@@ -40,4 +40,5 @@ datalist = {
         'name':'zhangsan',
         'age':'25'
     }
-print(run_main(baseurl,'POST',datalist))
+result_post = run_main(baseurl,'POST',datalist)
+print(result_post)

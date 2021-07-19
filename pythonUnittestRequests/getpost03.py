@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'在getpost01的基础上，使用类封装接口测试脚本'
+'在getpost02的基础上，使用unittest'
 
 __author__ = 'Victor Wu'
 
@@ -37,7 +37,6 @@ if __name__ == '__main__':
     }
     run = RunMain(baseurl,'GET',datalist)
     #run = RunMain(baseurl,'POST',datalist)
-    print(run)  #这是个类，打印不出来内容
     print('=================================')
     print(run.res)
     print('=================================')
