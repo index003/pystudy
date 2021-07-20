@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+'使用unittest调用oop的get和post请求'
+
+__author__ = 'Victor Wu'
+
+import unittest
+from send_get_post_oop import RunMain
+
+class TestMethod(unittest.TestCase):
+
+    def setUp(self):
+        self.run = RunMain()
+    
+    def test_001_get(self):
+        baseurl = 'http://httpbin.org/get'
+        datalist = {
+        'name':'zhangsan',
+        'age':'25'
+        }
+        res = self.run.run_main(baseurl,'GET',datalist)
+        print(res)
+
+    def test_002_post(self):
+        baseurl = 'http://httpbin.org/post'
+        datalist = {
+        'name':'zhangsan',
+        'age':'25'
+        }
+        res = self.run.run_main(baseurl,'POST',datalist)
+        print(res)
+
+if __name__ == '__main__':
+    unittest.main()
