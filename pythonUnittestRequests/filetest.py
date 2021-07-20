@@ -10,7 +10,7 @@ import unittest
 
 
 print(os.name)
-print(os.path.abspath('.'))
+print('=======',os.path.abspath('.'))
 case_path = os.path.join(os.path.dirname(os.path.abspath('lottery-order.py')))
 case_path2 = os.path.join(os.getcwd(), 'lottery-order.py')
 print(case_path)
@@ -30,3 +30,4 @@ print(filename)
 with open('./test.txt','r') as f:
     for line in f.readlines():
         print(line)
+
