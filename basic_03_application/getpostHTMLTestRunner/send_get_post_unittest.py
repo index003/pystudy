@@ -42,11 +42,10 @@ if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(TestMethod('test_001_get'))
     suite.addTest(TestMethod('test_002_post'))
-    # filename = "../report/report.html"
-   
+    
     now = time.strftime("%Y-%m-%d %H-%M-%S")
-    public_path = os.path.dirname(os.path.abspath(sys.argv[0])) # 获取当前运行的.py文件所在的绝对路径
-    # public_path = os.path.abspath('.')
+    # public_path = os.path.dirname(os.path.abspath(sys.argv[0])) # 获取当前运行的.py文件所在的绝对路径
+    public_path = os.path.dirname(__file__)    # 当前执行文件的路径 推荐使用这种方式
     filename = public_path + "\\report\\" + now + "report.html" 
     
     with open(filename, 'wb') as wf:
