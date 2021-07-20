@@ -15,8 +15,8 @@ data = {
     'age':'25'
 }
 
-# response = requests.post(url,json=data)
-response = requests.post(url,data=data) # 两种方式都可以
+# response = requests.post(url, json=data)
+response = requests.post(url, data=data) # 两种方式都可以
 response.encoding = 'utf-8'
 print(response.text)    # 字符串形式
 res = json.loads(response.text)
