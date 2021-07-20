@@ -53,7 +53,7 @@ if __name__ == '__main__':
         # 定义测试报告
         runner = HTMLTestRunner(
             stream=wf,
-            title="用户交易接口测试报告",
-            description="测试用例执行情况："
+            title="get post HTMLTestRunner",
+            description="description"
         )
         runner.run(suite)
