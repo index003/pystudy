@@ -10,24 +10,17 @@ import unittest
 
 
 print(os.name)
-print('=======',os.path.abspath('.'))
-case_path = os.path.join(os.path.dirname(os.path.abspath('lottery-order.py')))
-case_path2 = os.path.join(os.getcwd(), 'lottery-order.py')
-print(case_path)
-print(case_path2)
-print(os.path.abspath('lottery-order.py'))
-print(os.path.dirname(os.path.abspath('lottery-order.py')))
-print(os.path.dirname((os.path.dirname(os.path.abspath('lottery-order.py')))))
 
-sys.path.append('./Interface')    
-test_dir = './Interface'     
-print(test_dir)
 public_path = os.path.dirname(os.path.abspath(sys.argv[0]))
-print(public_path)
-filename = public_path + "\\Report\\" + "report.html"  
-print(filename)
+print('public_path ===>', public_path)
 
-with open('./test.txt','r') as f:
+filename = public_path + "\\Report\\" + "report.html"  
+print('filename ===>', filename)
+
+current_path = os.path.dirname(__file__)    # 当前执行文件的路径
+print('current_path===>', current_path)
+
+with open(current_path + './test.txt','r', encoding = 'utf-8') as f:
     for line in f.readlines():
         print(line)
 
