@@ -22,8 +22,10 @@ class TestMethod(unittest.TestCase):
         res = self.run.run_main(baseurl,'GET',datalist)
         print(res)
         self.assertEqual(res['args']['age'], '25','Passed')
-
+        # globals()['userid'] = '1000023'
+    # @unittest.skip('test_002_post')   # 当前用例不执行
     def test_002_post(self):
+        # print(self.userid)
         baseurl = 'http://httpbin.org/post'
         datalist = {
         'name':'zhangsan',
