@@ -34,4 +34,8 @@ class TestMethod(unittest.TestCase):
         self.assertEqual(res['form']['age'], '26','Failed')
 
 if __name__ == '__main__':
-    unittest.main()
+    # unittest.main()   # 全部执行，下面的方式可以自己组织
+    suite = unittest.TestSuite()
+    suite.addTest(TestMethod('test_001_get'))
+    suite.addTest(TestMethod('test_002_get'))
+    unittest.TextTestRunner().run(suite)
