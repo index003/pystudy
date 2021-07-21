@@ -21,7 +21,7 @@ filepathC02 = os.path.join(current_path, filenameC)
 with open(filepathC02,'r', encoding = 'utf-8') as f:
     print('===filenameC02 start===')
     for line in f.readlines():
-        print(line)
+        print(line.rstrip())    # rstrip()消除重复的换行
     print('===filenameC02 end===')
 
 filenameD = '../testtemp/test.txt'
@@ -32,7 +32,7 @@ filepathC04 = os.path.join(current_path, filenameD)
 with open(filepathC04,'r', encoding = 'utf-8') as f:
     print('===filenameC04 start===')
     for line in f.readlines():
-        print(line)
+        print(line.rstrip())
     print('===filenameC04 end===')
 
 # 路径操作2==public_path（可以用）
@@ -48,7 +48,7 @@ filepathC06 = os.path.join(public_path, filenameE)
 with open(filepathC06,'r', encoding = 'utf-8') as f:
     print('===filenameC06 start===')
     for line in f.readlines():
-        print(line)
+        print(line.rstrip())
     print('===filenameC06 end===')
 
 filenameF = '../testtemp/test.txt'
@@ -59,5 +59,5 @@ filepathC08 = os.path.join(public_path, filenameF)
 with open(filepathC08,'r', encoding = 'utf-8') as f:
     print('===filenameC08 start===')
     for line in f.readlines():
-        print(line)
+        print(line.rstrip())
     print('===filenameC08 end===')
