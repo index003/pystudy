@@ -15,7 +15,7 @@ class RunMain():
         response = requests.get(url=url, params=param, headers=header)
         return json.loads(response.text)
     
-    def send_post(self,url,data,header=None):
+    def send_post(self, url, data, header=None):
         response = requests.post(url=url, data=data, headers=header)
         return json.loads(response.text)
 

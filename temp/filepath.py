@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-'文件操作小结'
+""" 文件操作小结 """
 
 __author__ = 'Victor Wu'
 
@@ -18,7 +18,7 @@ filenameC = './test.txt'
 # 第二种方式，join方式，当前目录的文件
 filepathC02 = os.path.join(current_path, filenameC) 
 
-with open(filepathC02,'r', encoding = 'utf-8') as f:
+with open(filepathC02, 'r', encoding='utf-8') as f:
     print('===filenameC02 start===')
     for line in f.readlines():
         print(line.rstrip())    # rstrip()消除重复的换行
@@ -45,7 +45,7 @@ filenameE = './test.txt'
 # 第二种方式，join方式，当前目录的文件
 filepathC06 = os.path.join(public_path, filenameE) 
 
-with open(filepathC06,'r', encoding = 'utf-8') as f:
+with open(filepathC06,'r', encoding='utf-8') as f:
     print('===filenameC06 start===')
     for line in f.readlines():
         print(line.rstrip())
@@ -56,7 +56,7 @@ filenameF = '../testtemp/test.txt'
 # 第四种方式，join方式，上层目录的文件
 filepathC08 = os.path.join(public_path, filenameF) 
 
-with open(filepathC08,'r', encoding = 'utf-8') as f:
+with open(filepathC08, 'r', encoding='utf-8') as f:
     print('===filenameC08 start===')
     for line in f.readlines():
         print(line.rstrip())
