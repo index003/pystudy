@@ -18,4 +18,3 @@ class TestMethod():
         res = self.run.run_main(baseurl,'GET',datalist)
         print(res)
         self.assertEqual(res['args']['age'], '25','Passed')
-        # globals()['userid'] = '1000023'
