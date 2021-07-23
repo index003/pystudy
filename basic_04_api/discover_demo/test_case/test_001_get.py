@@ -6,8 +6,13 @@
 __author__ = 'Victor Wu'
 
 from demo.send_get_post_oop import RunMain
+import sys
+import os
 
 class TestMethod():
+
+    base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.append(base_path)
 
     def test_001_get(self):
         baseurl = 'http://httpbin.org/get'
