@@ -9,8 +9,9 @@ import unittest
 from HTMLTestRunner import HTMLTestRunner
 import os
 import time
+from run_htr import TestMethod
 
-class RunAll(unittest):
+class RunAll(TestMethod):
 
     if __name__=="__main__":
         #定义测试用例的目录为当前目录
@@ -26,7 +27,7 @@ class RunAll(unittest):
             # 定义测试报告
             runner = HTMLTestRunner(
                 stream=wf,
-                title="get post HTMLTestRunner",
+                title="discover get post HTMLTestRunner",
                 description="description"
             )
             runner.run(discover)
