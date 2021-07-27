@@ -13,7 +13,7 @@ sys.path.append(project_path)
 # print(yaml.safe_load(f))
 @ddt.ddt
 class MyDdt_test(unittest.TestCase):
-    @ddt.data(1,2,3)
+    @ddt.file_data('../data/demo.yaml')
     def test1(self, num):
         self.assertTrue(num > 2)
 

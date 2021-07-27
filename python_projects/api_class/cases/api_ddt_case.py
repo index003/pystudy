@@ -1,8 +1,9 @@
 import unittest
 import sys
 from os.path import dirname,abspath
-import yaml
+
 project_path = dirname(dirname(abspath(__file__)))
+print(project_path)
 #__file__用于获取文件的路径，abspath(__file__)获得绝对路径；
 #dirname()用于获取上级目录，两个dirname()相当于获取了当前文件的上级的上级即示例中project2
 sys.path.append(project_path)
@@ -26,13 +27,12 @@ class ApiCases(unittest.TestCase):
         cls.kd = KeyDemo() 
         
     # 测试用例
-    @ddt.file_data('./data/demo.yaml')
-    @ddt.unpack
+    @ddt.file_data('../data/demo.yaml')
     def test_01_api_demo(self, **kwargs):
-        url = self.url + kwargs.get('path')
+        url = self.url + kwargs['path']
         print(url)
         # # 执行测试
-        res = self.kd.get(url, kwargs.get('data'))
+        res = self.kd.get(url, kwargs['data'])
         print(res.text)
 
         ApiCases.value = self.kd.get_text(res.text, 'Name')
