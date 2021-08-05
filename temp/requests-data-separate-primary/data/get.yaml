@@ -1,0 +1,5 @@
+path: get
+data:
+  name: zhangsan
+  age: '25'
+text: zhangsan
