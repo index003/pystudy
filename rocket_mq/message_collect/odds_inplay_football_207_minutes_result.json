@@ -1,0 +1,40 @@
+{
+  "fixtureId": 7437741,
+  "source": "LSPORTS",
+  "markets": [
+    {
+      "id": 207,
+      "names": {},
+      "bets": [
+        {
+          "id": 0,
+          "name": "1",
+          "line": "",
+          "baseLine": "",
+          "status": 1,
+          "startPrice": "",
+          "price": "1.4"
+        },
+        {
+          "id": 0,
+          "name": "X",
+          "line": "",
+          "baseLine": "",
+          "status": 1,
+          "startPrice": "",
+          "price": "2.3"
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "",
+          "baseLine": "",
+          "status": 1,
+          "startPrice": "",
+          "price": "2.8"
+        }
+      ]
+    }
+  ],
+  "updateType": "ODDS"
+}

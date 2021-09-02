@@ -1,0 +1,17 @@
+{
+  "source": "LSPORTS",
+  "fixtureId": 7401542,
+  "periods": [{
+    "type": "WHOLE",
+    "homeScore": "2",
+    "awayScore": "2"
+  },{
+    "type": "FIRST_HALF",
+    "homeScore": "1",
+    "awayScore": "1"
+  },{
+    "type": "SECOND_HALF",
+    "homeScore": "1",
+    "awayScore": "1"
+  }]
+}

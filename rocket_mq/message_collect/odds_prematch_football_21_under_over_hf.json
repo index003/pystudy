@@ -1,0 +1,33 @@
+{
+  "fixtureId":7401545,
+  "source":"LSPORTS",
+  "markets":[
+    {
+      "id":21,
+      "names":{
+
+      },
+      "bets":[
+        {
+          "id":0,
+          "name":"Over",
+          "line":"0.5",
+          "baseLine":"0.5",
+          "status":2,
+          "startPrice":"",
+          "price":1.363
+        },
+        {
+          "id":0,
+          "name":"Under",
+          "line":"0.5",
+          "baseLine":"0.5",
+          "status":2,
+          "startPrice":"",
+          "price":3
+        }
+      ]
+    }
+  ],
+  "updateType":"ODDS"
+}

@@ -1,0 +1,46 @@
+{
+  "source": "LSPORTS",
+  "fixtureId": 7441761,
+  "periods": [{
+    "type": "WHOLE",
+    "homeScore": "1",
+    "awayScore": "0"
+  },{
+    "type": "INNING_1ST",
+    "homeScore": "1",
+    "awayScore": "0"
+  },{
+    "type": "INNING_2ND",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_3RD",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_4TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_5TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_6TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_7TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_8TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  },{
+    "type": "INNING_9TH",
+    "homeScore": "0",
+    "awayScore": "0"
+  }
+  ]
+}

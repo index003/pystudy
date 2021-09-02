@@ -1,0 +1,31 @@
+{
+    "fixtureId": 6948390,
+    "source": "LSPORTS",
+    "markets": [
+        {
+            "id": 342,
+            "names": {},
+            "bets": [
+                {
+                    "id": 0,
+                    "name": "1",
+                    "line": "-7.5(0-0)",
+                    "baseLine": "",
+                    "status": 1,
+                    "startPrice": "",
+                    "price": "1.083"
+                },
+                {
+                    "id": 0,
+                    "name": "2",
+                    "line": "7.5(0-0)",
+                    "baseLine": "",
+                    "status": 1,
+                    "startPrice": "",
+                    "price": "8.5"
+                }
+            ]
+        }
+    ],
+    "updateType": "ODDS"
+}
