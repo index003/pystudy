@@ -1,0 +1,11 @@
+chapert01   起步
+chapert02   变量和简单的数据类型
+chapert03   列表简介
+chapert04   操作列表
+chapert05   if语句
+chapert06   字典
+chapert07   用户输入和while循环
+chapert08   函数
+chapert09   类
+chapert10   文件和异常
+chapert11   测试代码
