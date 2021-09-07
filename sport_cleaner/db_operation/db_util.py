@@ -1,5 +1,5 @@
 import pymysql
-from db_operation import db_list
+from db_operation import config_db_list
 
 # 初始化数据库为fat3
 env = 3
@@ -7,7 +7,7 @@ env = 3
 
 # 连接数据库
 def get_db_connect():
-    connections = pymysql.connect(**db_list.base_info[env - 1])
+    connections = pymysql.connect(**config_db_list.base_info[env - 1])
     return connections
 
 

@@ -1,9 +1,9 @@
 import requests
 import json
-import api_info
+import config_api_info
 import admin_login
 
-api_domain = api_info.API_DOMAIN
+api_domain = config_api_info.API_DOMAIN
 
 path = "/lottery/settlements?pageSize=20&pageNum=1&awardStatus=AWARD_PENDING"
 url = api_domain + path

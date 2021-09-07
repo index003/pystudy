@@ -1,8 +1,8 @@
 import json
 import requests
-import api_info
+import config_api_info
 
-api_domain = api_info.API_DOMAIN
+api_domain = config_api_info.API_DOMAIN
 
 
 # 登录admin

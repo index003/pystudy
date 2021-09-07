@@ -2,5 +2,5 @@
 # 默认为fat1环境
 env = 1
 # 接口域名
-API_DOMAIN = f"https://api.prebitgame.com"
+API_DOMAIN = f"https://fat{env}-api.testbitgame.com"
 

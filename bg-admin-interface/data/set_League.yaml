@@ -1,0 +1,19 @@
+set_League:
+  id: '17613'
+  path: lottery/leagues/libraryOrGrade/
+  headers:
+    content-Type: application/json;charset=UTF-8
+    authorization:
+  data:
+    grade: A
+    location: INTERNATIONAL
+  text: '0000'
+set_League2:
+  id: '17613'
+  path: lottery/leagues/libraryOrGrade/
+  headers:
+    content-Type: application/json;charset=UTF-8
+    authorization:
+  data:
+    available: true
+  text: '0000'
