@@ -2,18 +2,16 @@ import pymysql
 from config import db_config
 from config import env_config
 
-env = env_config.env
-
 
 # 连接数据库
-def get_db_connect(env):
-    connections = pymysql.connect(**db_config.db_info[env])
+def get_db_connect():
+    connections = pymysql.connect(**db_config.db_info[env_config.env])
     return connections
 
 
 # 增删改数据
-def modify_execute(env, sql):
-    connection = get_db_connect(env)
+def modify_execute(sql):
+    connection = get_db_connect()
     cursor = connection.cursor()
     print(sql)
     cursor.execute(sql)
@@ -24,8 +22,8 @@ def modify_execute(env, sql):
 
 
 # 批量增删改
-def modify_execute_list(env, sqls):
-    connection = get_db_connect(env)
+def modify_execute_list(sqls):
+    connection = get_db_connect()
     cursor = connection.cursor()
     for sql in sqls:
         cursor.execute(sql)
@@ -36,8 +34,8 @@ def modify_execute_list(env, sqls):
 
 
 # 查询数据
-def query_execute(env, sql):
-    connection = get_db_connect(env)
+def query_execute(sql):
+    connection = get_db_connect()
     cursor = connection.cursor()
     cursor.execute(sql)
     result = cursor.fetchall()

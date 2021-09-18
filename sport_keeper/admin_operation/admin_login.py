@@ -1,16 +1,11 @@
 import json
 import requests
 from config import api_config
-from config import env_config
-
-env = env_config.env
 
 
 # 登录admin
-def admin_login(env):
-    api_domain = api_config.get_apidomain(env)
-    path = api_config.sendopt_path
-    url = api_domain + path
+def admin_login():
+    url = api_config.get_sendopt_url()
     print(url)
     data = {
         "account": "admin"
@@ -19,9 +14,7 @@ def admin_login(env):
     rspCode = json.loads(response.text)['rspCode']
     print(f"rspCode = {rspCode}")
 
-    path = api_config.login_path
-    url = api_domain + path
-
+    url = api_config.get_login_url()
     data = {
         "account": "admin",
         "password": "123456",
