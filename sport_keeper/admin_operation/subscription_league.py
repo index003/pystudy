@@ -13,7 +13,7 @@ def subscription_league(category_id):
 
     for league_id in league_id_list:
         print(league_id)
-        url = api_config.get_subscription_path() + f'{league_id}'
+        url = api_config.get_subscription_url() + f'{league_id}'
         header = {
             'content-type': 'application/json',
             'authorization': token

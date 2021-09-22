@@ -12,7 +12,7 @@ def admin_login():
     }
     response = requests.get(url, params=data)
     rspCode = json.loads(response.text)['rspCode']
-    print(f"rspCode = {rspCode}")
+    # print(f"rspCode = {rspCode}")
 
     url = api_config.get_login_url()
     data = {
@@ -28,5 +28,5 @@ def admin_login():
 
     response = requests.post(url, data=data, headers=headers)
     token = json.loads(response.text)['data']['token']
-    print(f"token = {token}")
+    # print(f"token = {token}")
     return token

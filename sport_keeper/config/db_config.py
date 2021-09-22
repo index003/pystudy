@@ -35,6 +35,15 @@ db_info = {
         'db': 'sport-lottery',
         'charset': 'utf8'
     },
+    # game1 数据库连接信息
+    'game1': {
+        'host': '172.16.4.81',
+        'port': 3306,
+        'user': 'wuchangzheng',
+        'passwd': 'JnbbSQj4kW6fLFDfZxlg',
+        'db': 'sport-lottery',
+        'charset': 'utf8'
+    },
     # pre 数据库连接信息
     'pre': {
         'host': '172.16.4.41',
