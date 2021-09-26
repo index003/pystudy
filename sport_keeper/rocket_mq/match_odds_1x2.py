@@ -6,7 +6,7 @@ from config import env_config
 env_config.env = 'fat2'
 
 
-def match_status_msg(match_id, status):
+def match_odds_1x2_msg(match_id, status):
     message_body = {
         "fixtureId": 7139139,
         "source": "LSPORTS",
@@ -64,5 +64,5 @@ def match_status_msg(match_id, status):
     print(message_body)
 
 
-match_status_msg(1399, 2)
+match_odds_1x2_msg(1399, 2)
 
