@@ -24,8 +24,9 @@ def get_list(award_status):
     # print(f"Total is: {data_list['total']}")
     # 计算有多少页数据,如果列表为空，就不执行了
     if data_list['total'] == 0:
-        return "The list is empty"
+        return
     page_numbers = int(data_list['total']/20 + 1)
+    print(page_numbers)
 
     # 将列表中所有的赛事都取到
     match_ids = []
@@ -36,10 +37,12 @@ def get_list(award_status):
             'awardStatus': award_status
         }
         response_all = requests.get(url, params=data2, headers=headers)
+        print(response_all.url)
         response_dict_all = json.loads(response_all.text)
         data_list_all = response_dict_all['data']
         match_list = data_list_all['list']
         for match in match_list:
             match_id = match['matchId']
             match_ids.append(match_id)
+    print(match_ids)
     return match_ids

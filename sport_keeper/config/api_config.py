@@ -29,6 +29,17 @@ def get_front_domain():
     return domain
 
 
+# mq主域名
+def get_mq_domain():
+    if 'fat' in env_config.env:
+        domain = f'http://{env_config.env}.console.testbitgame.com/topic/sendTopicMessage.do'
+    elif 'game' in env_config.env:
+        domain = f'http://{env_config.env}.console.testbitgame.com/topic/sendTopicMessage.do'
+    else:
+        return "This environment does not support"
+    return domain
+
+
 # 后台接口路径
 # 获取验证码
 def get_sendopt_url():
@@ -61,7 +72,9 @@ def get_home_category_url():
     return get_front_domain() + "/lottery/platform/v2/matches"
 
 
-#
+# 赛事详情
 def get_match_detail_url():
     return get_front_domain() + "/lottery/platform/v2/matches/"
 
+
+# MQ地址

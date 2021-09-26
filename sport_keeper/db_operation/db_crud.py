@@ -34,10 +34,10 @@ def modify_execute_list(sqls):
 
 
 # 查询数据
-def query_execute(sql):
+def query_execute(sql, *params):
     connection = get_db_connect()
     cursor = connection.cursor()
-    cursor.execute(sql)
+    cursor.execute(sql, [*params])
     result = cursor.fetchall()
     cursor.close()
     connection.close()

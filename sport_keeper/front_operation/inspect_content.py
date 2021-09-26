@@ -1,14 +1,14 @@
+import time
+
 import requests
 import json
 from config import api_config
-from config import env_config
-
-env_config.env = 'prod'
 
 
 # 获取赛事首页类别菜单信息，返回类别的详细信息
 def get_home_menus():
     url = api_config.get_home_menus_url()
+    print(url)
     request_data = {
         'lang': 'zh-Hant',
         'type': 0,
@@ -24,8 +24,9 @@ def get_home_menus():
 def get_home_menus_category_id(data):
     category_list = []
     for category in data:
-        if category['count'] != 0 and category['categoryId'] not in [212, 213, 214]:
+        if category['count'] != 0 and category['categoryId'] not in [8, 212, 213, 214]:
             category_list.append(category['categoryId'])
+    print(category_list)
     return category_list
 
 
@@ -42,12 +43,13 @@ def show_home_menus_result(data):
 
 # 查询类别下所有的赛事
 def get_home_category_all_match(category_id):
+    print("category_id", category_id)
     url = api_config.get_home_category_url()
     request_data = {
         'type': 0,
         'subType': 0,
-        'categroyId': category_id,
-        'lang': 'zh-Hant',
+        'categoryId': category_id,
+        'lang': 'zh-Hans',
         'launchType': 'CENTRALIZED'
     }
     response = requests.get(url, params=request_data)
@@ -60,7 +62,6 @@ def get_home_category_all_match(category_id):
             match_info_list = leaguage_info['matchInfoList']
             for match_info in match_info_list:
                 match_ids.append(match_info['id'])
-    print(f"{category_id}= {match_ids}")
     return match_ids
 
 
@@ -82,7 +83,6 @@ def get_match_detail(match_id):
 
 def get_category_ids():
     menu_list = get_home_menus()
-    # show_home_menus_result(menu_list)
     return get_home_menus_category_id(menu_list)
 
 
@@ -90,17 +90,11 @@ def get_match_result():
     match_ids = []
     for category_id in get_category_ids():
         match_ids.append(get_home_category_all_match(category_id))
-
     for match_id in match_ids:
+        time.sleep(1)
         if isinstance(match_id, list):
             for match_id_temp in match_id:
+                time.sleep(1)
                 get_match_detail(match_id_temp)
         else:
             get_match_detail(match_id)
-
-
-data = get_home_menus()
-show_home_menus_result(data)
-
-
-get_match_result()
