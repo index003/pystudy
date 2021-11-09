@@ -14,14 +14,14 @@ def clean_match_list(match_ids):
         for match_id in match_ids:
             for sql in lines:
                 sql_r = sql.format(match_id)
-                db_crud.modify_execute(sql_r)
+                db_crud.get_lottery_db().modify_execute(sql_r)
             clean_match_order(match_id)
 
 
 def clean_match_order(match_id):
     # 删除订单单独处理
     sql_order_id = f"select order_id from sport_betting_order_option where match_id = {match_id}"
-    order_id = db_crud.query_execute(sql_order_id)
+    order_id = db_crud.get_lottery_db().query_execute(sql_order_id)
     # 判断是否有订单，有就删除，没有就不用处理了
     if order_id:
         # 将原始结果变成list
@@ -34,8 +34,8 @@ def clean_match_order(match_id):
             delete_id = tuple(order_id_list)
 
         sql_delete_option_order = f"delete from sport_betting_order_option where order_id in {delete_id}"
-        db_crud.modify_execute(sql_delete_option_order)
+        db_crud.get_lottery_db().modify_execute(sql_delete_option_order)
         sql_delete_order = f"delete from sport_betting_order where id in {delete_id}"
-        db_crud.modify_execute(sql_delete_order)
+        db_crud.get_lottery_db().modify_execute(sql_delete_order)
     else:
         print(f"No orders of this match （id = {match_id}）")
