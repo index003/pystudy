@@ -3,9 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/db_operation/clean_match.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/db_operation/clean_match_function.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/main_mq.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/rocket_mq/match_odds_1x2.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/rocket_mq/match_status.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/temp.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/rocket_mq/message_body_odds.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/rocket_mq/message_body_status.py" dialect="GenericSQL" />
   </component>
 </project>

@@ -15,7 +15,7 @@ def match_status_msg(match_id, status=2):
                  "LEFT JOIN sport_league_info b ON a.league_id=b.id "
                  "LEFT JOIN sport_category_info c on a.category_id = c.id where a.id= %s")
 
-    query_result = db_crud.LOTTERY.query_execute(msg_query, match_id)
+    query_result = db_crud.get_lottery_db().query_execute(msg_query, match_id)
     current_millis = int(time.time() * 1000)
     match_msg = MatchMsg('LSPORTS', 0, *query_result[0], status, current_millis, current_millis)
     message_body = str(match_msg._asdict()).replace("'", '"')
