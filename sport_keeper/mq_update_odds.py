@@ -2,7 +2,7 @@ from itertools import chain
 from config import env_config
 from rocket_mq import send_message
 from rocket_mq import message_body_odds
-from rocket_mq import mq_basic_data
+from db_operation import mq_basic_data
 
 # 配置环境 fat1，fat2，fat3,fat4,pre,prod
 env_config.env = 'fat2'

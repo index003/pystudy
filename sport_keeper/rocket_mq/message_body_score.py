@@ -1,5 +1,5 @@
 import json
-from rocket_mq.mq_basic_data import get_fixture_id_by_id,get_category_id_by_id
+from db_operation.mq_basic_data import get_fixture_id_by_id, get_category_id_by_id
 
 score_periods = {
     # 足球

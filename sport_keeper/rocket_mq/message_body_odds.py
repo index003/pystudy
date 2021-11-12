@@ -1,7 +1,7 @@
 import json
 import time
 from collections import namedtuple
-from rocket_mq.mq_basic_data import query_match_info_by_id, query_match_market_option_by_id
+from db_operation.mq_basic_data import query_match_market_option_by_id, get_fixture_id_by_id
 
 
 def create_messages_markets_bets(match_id, market_id):
@@ -17,7 +17,7 @@ def create_messages_markets_bets(match_id, market_id):
     ]
     BetsMsg = namedtuple('BetsMsg', bets_fields)
     current_millis = int(time.time() * 1000)
-    fixture_id = query_match_info_by_id(match_id)
+    fixture_id = get_fixture_id_by_id(match_id)
     query_result = query_match_market_option_by_id(fixture_id, market_id)
     bets_body = []
     for item in query_result:
@@ -30,8 +30,7 @@ def create_messages_markets_bets(match_id, market_id):
 
 def create_message_body(match_id, market_id):
     bets = create_messages_markets_bets(match_id, market_id)
-    source_match_id = query_match_info_by_id(match_id)
-    fixtureId = source_match_id[0][0]
+    fixtureId = get_fixture_id_by_id(match_id)
     message_body = {
         "fixtureId": fixtureId,
         "source": "LSPORTS",
