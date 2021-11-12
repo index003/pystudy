@@ -36,3 +36,13 @@ def query_match_market_option_by_id(fixture_id, market_id):
     query_result = db_crud.get_data_db().query_execute(sql_query, fixture_id, market_id)
     return query_result
 
+
+def query_match_status_fields_by_id(match_id):
+    msg_query = ("select c.source_category_id,a.league_id,a.source_match_id as fixtureID,"
+                 "a.home_team_id,a.away_team_id from sport_match_info a "
+                 "LEFT JOIN sport_league_info b ON a.league_id=b.id "
+                 "LEFT JOIN sport_category_info c on a.category_id = c.id where a.id= %s")
+
+    query_result = db_crud.get_lottery_db().query_execute(msg_query, match_id)
+    return query_result
+

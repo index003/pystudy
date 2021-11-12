@@ -1,6 +1,6 @@
 import time
 from collections import namedtuple
-from db_operation import db_crud
+from db_operation import mq_basic_data
 
 
 def match_status_msg(match_id, status=2):
@@ -9,13 +9,7 @@ def match_status_msg(match_id, status=2):
         "homeTeamId", "awayTeamId", "status", "startDate", "lastUpdate"
     ]
     MatchMsg = namedtuple('MatchMsg', match_fields)
-
-    msg_query = ("select c.source_category_id,a.league_id,a.source_match_id as fixtureID,"
-                 "a.home_team_id,a.away_team_id from sport_match_info a "
-                 "LEFT JOIN sport_league_info b ON a.league_id=b.id "
-                 "LEFT JOIN sport_category_info c on a.category_id = c.id where a.id= %s")
-
-    query_result = db_crud.get_lottery_db().query_execute(msg_query, match_id)
+    query_result = mq_basic_data.query_match_status_fields_by_id(match_id)
     current_millis = int(time.time() * 1000)
     match_msg = MatchMsg('LSPORTS', 0, *query_result[0], status, current_millis, current_millis)
     message_body = str(match_msg._asdict()).replace("'", '"')
