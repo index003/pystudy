@@ -1,8 +1,0 @@
-return_rate:
-  path: lottery/sport/configs
-  headers:
-    content-Type: application/json;charset=UTF-8
-    authorization:
-  data:
-    configKey: RETURN_RATE
-  text: '97'

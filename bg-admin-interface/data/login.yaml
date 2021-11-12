@@ -1,9 +1,0 @@
-login:
-  path: login
-  headers:
-    content-Type: application/json;charset=UTF-8
-  data:
-    account: index002
-    password: '123456'
-    otpCode: '123456'
-  text: '0000'

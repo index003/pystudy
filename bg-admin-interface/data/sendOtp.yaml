@@ -1,5 +1,0 @@
-sendOtp:
-  path: login/sendOtp
-  data:
-    account: index002
-  text: '0000'
