@@ -45,11 +45,15 @@ def send_match_whole_markets_message(match_id, betting_phase):
         print("Please check params!")
 
 
-send_match_whole_markets_message(1621, 'inplay')
+send_match_whole_markets_message(1592, 'inplay')
 
 
 # 推送单个玩法的消息
 def send_match_market_message(match_id, market_id, betting_phase):
+    market_ids = get_match_whole_markets(match_id)
+    if market_id not in market_ids:
+        print("market id is wrong")
+        return
     if betting_phase == 'pre':
         send_prematch_odds(match_id, market_id)
     elif betting_phase == 'inplay':
@@ -58,4 +62,5 @@ def send_match_market_message(match_id, market_id, betting_phase):
         print("Please check params!")
 
 
+send_match_market_message(1623, 1, 'dka')
 

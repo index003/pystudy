@@ -1,5 +1,3 @@
-import threading
-
 import pymysql
 from config import db_config
 

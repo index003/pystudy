@@ -2,10 +2,12 @@ from itertools import chain
 from db_operation import db_crud
 
 
+# 删除单个赛事
 def clean_match(match_id):
     clean_match_list([match_id])
 
 
+# 删除多个赛事
 def clean_match_list(match_ids):
     if not match_ids:
         return
@@ -18,6 +20,7 @@ def clean_match_list(match_ids):
             clean_match_order(match_id)
 
 
+# 删除赛事订单
 def clean_match_order(match_id):
     # 删除订单单独处理
     sql_order_id = f"select order_id from sport_betting_order_option where match_id = {match_id}"

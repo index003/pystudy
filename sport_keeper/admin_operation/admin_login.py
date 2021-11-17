@@ -3,7 +3,7 @@ import requests
 from config import api_config
 
 
-# 登录admin
+# 登录admin,返回token
 def admin_login():
     url = api_config.get_sendopt_url()
     print(url)

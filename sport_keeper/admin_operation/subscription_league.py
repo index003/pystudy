@@ -5,6 +5,7 @@ from db_operation import db_crud
 from config import api_config
 
 
+# 订阅联赛
 def subscription_league(category_id):
     token = admin_login.admin_login()
     sql = f"select id from sport_league_info where category_id={category_id} and available=0"

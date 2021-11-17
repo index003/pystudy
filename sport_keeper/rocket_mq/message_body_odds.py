@@ -4,6 +4,8 @@ from collections import namedtuple
 from db_operation.mq_basic_data import query_match_market_option_by_id, get_fixture_id_by_id
 
 
+# 拼接赛事赔率变更的消息体
+# 拼接odds的bets域的消息
 def create_messages_markets_bets(match_id, market_id):
     bets_fields = [
         "id",
@@ -28,6 +30,7 @@ def create_messages_markets_bets(match_id, market_id):
     return bets_body
 
 
+# 拼接完整的消息体
 def create_message_body(match_id, market_id):
     bets = create_messages_markets_bets(match_id, market_id)
     fixtureId = get_fixture_id_by_id(match_id)

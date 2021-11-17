@@ -4,6 +4,7 @@ from config import api_config
 from admin_operation import admin_login
 
 
+# 访问待结算列表，返回赛事id
 def get_list(award_status):
     url = api_config.get_settlement_url()
     authorization = admin_login.admin_login()

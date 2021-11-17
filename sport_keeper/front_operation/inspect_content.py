@@ -1,5 +1,4 @@
 import time
-
 import requests
 import json
 from config import api_config

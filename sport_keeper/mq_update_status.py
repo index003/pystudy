@@ -5,14 +5,14 @@ from config import env_config
 env_config.env = 'fat2'
 
 
-def send_match_status_message(match_id, status=2):
+def send_match_status_message(match_id, status=1):
     # mq消息体
     message_body = message_body_status.match_status_msg(match_id, status)
     # 推送mq消息
     send_message.send_message_str('match_metadata_update', message_body)
 
 
-send_match_status_message(1621)
+send_match_status_message(1592, 2)
 
 '''
 status:
