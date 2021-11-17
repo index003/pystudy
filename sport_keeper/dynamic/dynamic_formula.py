@@ -1,4 +1,5 @@
 
+
 def format_float(float_num):
     format_num = str(float_num).split('.')[0] + '.' + str(float_num).split('.')[1][:12]
     return float(format_num)
@@ -21,7 +22,6 @@ def initial_win_rate(odds_list):
     for odds in odds_list:
         w_rate_item = (odds, format_float(r_rate / odds))
         w_rate.append(w_rate_item)
-    print(w_rate)
     return w_rate
 
 
@@ -32,7 +32,6 @@ def get_k_values(odds_list, k):
     for w_rate in w_rates:
         k_value = (w_rate[0], format_float(w_rate[1] * k))
         k_values.append(k_value)
-    print(k_values)
     return k_values
 
 
@@ -42,33 +41,33 @@ def get_target_odds_total_amount(odds, bet_amount, k, odds_list):
     for k_value in k_values:
         if k_value[0] == odds:
             target_odds_k_value = k_value[1]
-            target_odds_total_amount = target_odds_k_value + bet_amount
-    print(target_odds_total_amount)
+            target_odds_total_amount = target_odds_k_value + bet_amount * (odds - 1)
     return format_float(target_odds_total_amount)
 
 
 # 其他选项进注量 BK
-def get_other_odds_total_amount(odds, k, odds_list):
+def get_other_odds_total_amount(k, odds_list):
     other_odds_total_amounts = []
     k_values = get_k_values(odds_list, k)
     for k_value in k_values:
-        if k_value[0] != odds:
-            other_odds_total_amount = k_value[1]
-            other_odds_total_amounts.append(format_float(other_odds_total_amount))
-
+        # if k_value[0] != odds:
+        #     other_odds_total_amount = k_value[1]
+        #     other_odds_total_amounts.append(format_float(other_odds_total_amount))
+        other_odds_total_amount = k_value[1]
+        other_odds_total_amounts.append(format_float(other_odds_total_amount))
     return other_odds_total_amounts
 
 
 # 所有选项进注量的和 AK + T + BK
-def get_dynamic_all_amount(k, bet_amount):
-    dynamic_denominator = k + bet_amount
+def get_dynamic_all_amount(odds, k, bet_amount):
+    dynamic_denominator = k + bet_amount * (odds - 1)
     return dynamic_denominator
 
 
 def get_dynamic_odds(odds, bet_amount, k, odds_list):
     new_odds = []
 
-    all_amount = get_dynamic_all_amount(k, bet_amount)
+    all_amount = get_dynamic_all_amount(odds, k, bet_amount)
     r_rate = initial_return_rate(odds_list)
 
     target_odds_total_amount = get_target_odds_total_amount(odds, bet_amount, k, odds_list)
@@ -77,16 +76,12 @@ def get_dynamic_odds(odds, bet_amount, k, odds_list):
     aat_odds = format_float(r_rate / aat)
     new_odds.append(aat_odds)
 
-    other_odds_total_amounts = get_other_odds_total_amount(odds, k, odds_list)
+    other_odds_total_amounts = get_other_odds_total_amount(k, odds_list)
     for other_odds_total_amount in other_odds_total_amounts:
         bbt = format_float(other_odds_total_amount / all_amount)
         bbt_odds = format_float(r_rate / bbt)
         new_odds.append(bbt_odds)
     print(new_odds)
-
-
-get_dynamic_odds(4.2, 100, 10000, [1.1, 4.2, 8])
-
 
 
 
