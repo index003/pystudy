@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/db_operation/clean_match.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/db_operation/clean_match_function.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/rocket_mq/message_body_odds.py" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/rocket_mq/message_body_status.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/data/clean_match.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/data/clean_match.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/data/price_currency.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/rocket/message_body_odds.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/rocket/message_body_status.py" dialect="GenericSQL" />
   </component>
 </project>
