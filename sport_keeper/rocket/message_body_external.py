@@ -97,8 +97,10 @@ def create_message_body_results(match_id, source_id, add_score=0):
         source_info = ["espn", "ESPN"]
     elif source_id == 2:
         source_info = ["hupu", "HUPU"]
-    else:
+    elif source_id == 3:
         source_info = ["skysports", "SKYSPORTS"]
+    else:
+        print("the source is not exist!")
 
     message_main_info["sourceName"] = source_info[0]
     message_main_info["sourceType"] = source_info[1]
