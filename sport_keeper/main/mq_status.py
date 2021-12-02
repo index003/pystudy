@@ -12,7 +12,7 @@ def send_match_status_message(match_id, status=1):
     send_message.send_message_str('match_metadata_update', message_body)
 
 
-send_match_status_message(1592, 2)
+send_match_status_message(1662, 3)
 
 '''
 status:

@@ -11,7 +11,7 @@ def clean_match(match_id):
 def clean_match_list(match_ids):
     if not match_ids:
         return
-    with open('./db_operation/clean_match.sql', 'r', encoding='utf-8') as f:
+    with open('../data/clean_match.sql', 'r', encoding='utf-8') as f:
         lines = f.readlines()
         for match_id in match_ids:
             for sql in lines:

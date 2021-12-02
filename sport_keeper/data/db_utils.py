@@ -55,3 +55,7 @@ def get_data_db():
 
 def get_platform_db():
     return DatabaseRepository(db_config.get_platform_info())
+
+
+def get_score_db():
+    return DatabaseRepository(db_config.get_score_info())

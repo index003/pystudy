@@ -8,3 +8,4 @@ def get_subscription_league(category_id):
     league_id_list = list(chain.from_iterable(league_ids))
     return league_id_list
 
+

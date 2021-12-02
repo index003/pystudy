@@ -21,5 +21,5 @@ def clean_match_settlement_list(award_status):
     clean_match.clean_match_list(match_ids)
 
 
-clean_match_by_id([1535])
+clean_match_by_id([1627])
 # clean_match_by_id([1886, 1887, 1888, 1889])

@@ -6,11 +6,27 @@ from data import db_utils
 # 根据match_id查询source_match_id,category_id
 def query_match_info_by_id(match_id):
     sql_query = ("select source_match_id,"
-                 "category_id, match_time, "
+                 "category_id, "
+                 "match_time, "
                  "home_team_id, "
-                 "away_team_id "
+                 "away_team_id, "
+                 "league_id "
                  "from sport_match_info where id = %s")
     query_result = db_utils.get_lottery_db().query_execute(sql_query, match_id)
+    return query_result
+
+
+# 根据category_id获取类别信息
+def query_category_info_by_id(category_id):
+    sql_query = "select * from sport_category_info where id = %s"
+    query_result = db_utils.get_lottery_db().query_execute(sql_query, category_id)
+    return query_result
+
+
+# 根据league_id获取联赛信息
+def query_league_info_by_id(league_id):
+    sql_query = "select * from sport_league_info where id = %s"
+    query_result = db_utils.get_lottery_db().query_execute(sql_query, league_id)
     return query_result
 
 
@@ -60,6 +76,7 @@ def query_basketball_player_market_code_by_id():
     return query_result
 
 
+# 根据球员玩法的market_code，获取赛事的球员信息
 def query_match_player_by_market_code(match_id, market_code):
     sql_query = ("select extra_label from sport_betting_market_option "
                  "where match_id = %s and "
@@ -69,12 +86,14 @@ def query_match_player_by_market_code(match_id, market_code):
     return query_result
 
 
+# 获取赛事开始时间
 def get_match_time(match_id):
     match_info = query_match_info_by_id(match_id)
     match_time = match_info[0][2]
     return match_time
 
 
+# 获取球队的英文名称
 def get_team_en_name(match_id):
     match_info = query_match_info_by_id(match_id)
     team_ids = [match_info[0][3], match_info[0][4]]
@@ -100,6 +119,31 @@ def get_category_id_by_id(match_id):
     return category_id
 
 
+# 返回category_code
+def get_category_code_by_id(match_id):
+    category_id = get_category_id_by_id(match_id)
+    category_info = query_category_info_by_id(category_id)
+    category_code = category_info[0][2]
+    return category_code
+
+
+# 返回联赛id
+def get_league_id_by_id(match_id):
+    source_match_info = query_match_info_by_id(match_id)
+    league_id = source_match_info[0][5]
+    return league_id
+
+
+# 返回联赛的英文名称
+def get_league_en_name_by_id(match_id):
+    league_id = get_league_id_by_id(match_id)
+    league_info = query_league_info_by_id(league_id)
+    league_name = json.loads(league_info[0][2])
+    league_en_name = league_name['en']
+    return league_en_name
+
+
+# 获取篮球球员玩法的market_code
 def get_basketball_player_market_code():
     market_codes = query_basketball_player_market_code_by_id()
     player_market_codes = []
@@ -108,6 +152,7 @@ def get_basketball_player_market_code():
     return player_market_codes
 
 
+# 获取赛事篮球玩法的球员名称
 def get_match_basketball_player_name(match_id):
     player_market_code_list = get_basketball_player_market_code()
     match_player_list = []

@@ -2,23 +2,30 @@ import json
 import random
 import sys
 from data import mq_basic
-from config import env_config
-
-env_config.env = "fat2"
 
 
 def create_message_body_request(match_id):
     match_time = str(mq_basic.get_match_time(match_id))
     team_en_name = mq_basic.get_team_en_name(match_id)
+    category_code = mq_basic.get_category_code_by_id(match_id)
+    league_name = mq_basic.get_league_en_name_by_id(match_id)
     message_body = {
-        "match_id": match_id,
-        "categoryCode": "BASKETBALL",
-        "leagueName": "NBA",
-        "match_time": match_time,
+        "matchId": match_id,
+        "categoryCode": category_code,
+        "leagueName": league_name,
+        "matchTime": match_time,
         "homeName": team_en_name[0],
         "awayName": team_en_name[1]
     }
-
+    print(message_body)
+    # message_body = {
+    #     "matchId": 10001,
+    #     "categoryCode": "BASKETBALL",
+    #     "leagueName": "NBA",
+    #     "matchTime": "2021-12-02 00:00:00",
+    #     "homeName": "Atlanta Hawks",
+    #     "awayName": "Indiana Pacers"
+    # }
     return json.dumps(message_body)
 
 
@@ -53,7 +60,7 @@ def create_message_body_score_list(add_score=0):
         type_score_list.insert(5, [12, 6, 6])
         type_score_list.insert(6, [13, 4, 12])
     else:
-        print("the max add phase is 3,please check the addtion time")
+        print("the add phase is 0 - 3,please check the addtion time")
         sys.exit()
     score_info_message = []
     for type_score in type_score_list:
@@ -72,15 +79,17 @@ def create_message_body_player_list(match_id):
     player_list_message = []
     for player in player_list:
         stats_body_list = []
+        team_type = random.randint(1, 2)
         for player_type in range(1, 9):
             stats_body = {
                 "type": player_type,
                 "value": random.randint(5, 15)
             }
             stats_body_list.append(stats_body)
+
         message_body = {
             "playerName": player,
-            "teamType": random.randint(1, 2),
+            "teamType": team_type,
             "stats": stats_body_list
         }
         player_list_message.append(message_body)
@@ -106,4 +115,4 @@ def create_message_body_results(match_id, source_id, add_score=0):
     message_main_info["sourceType"] = source_info[1]
     message_main_info["scoreInfoList"] = message_score_info
     message_main_info["playerStatInfoList"] = message_player_info
-    return json.dumps(message_main_info)
+    return message_main_info

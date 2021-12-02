@@ -23,7 +23,8 @@ def get_home_menus():
 def get_home_menus_category_id(data):
     category_list = []
     for category in data:
-        if category['count'] != 0 and category['categoryId'] not in [8, 212, 213, 214]:
+        # if category['count'] != 0 and category['categoryId'] in [8]:
+        if category['count'] != 0 and category['categoryId'] not in [212, 213, 214]:
             category_list.append(category['categoryId'])
     print(category_list)
     return category_list

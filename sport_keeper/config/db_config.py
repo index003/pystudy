@@ -77,4 +77,7 @@ def get_platform_info():
     return platform_db
 
 
+def get_score_info():
+    score_db = db_base_info(env_config.env, 'sport_score')
+    return score_db
 
