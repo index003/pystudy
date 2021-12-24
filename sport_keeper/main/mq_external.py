@@ -34,7 +34,7 @@ def send_results(match_id, source_id, add_score):
     source = temp_message['sourceName']
     temp_message['hash'] = md5_value(match_id, source)
     message_body = json.dumps(temp_message)
-    send_message.send_message_str('SAVE_EXTERNAL_MATCH_RESULT', message_body)
+    send_message.send_message_str('EXTERNAL_MATCH_RESULT', message_body)
 
 
 def send_result_respons(match_id, source_id, add_score):
@@ -53,7 +53,7 @@ def send_external_message(function_id, source_id, add_score, match_id):
         print("function is not exist!")
 
 
-# function_id: 1 rquest 2 save 3 response
+# function_id: 1 rquest 2 result 3 response
 # source_id: 1 espn 2 hupu 3 skysports
 # add_score: 0 无加时比分 1 一个加时 2 两个加时 3 三个加时
 

@@ -1,8 +1,6 @@
 import sys
 from data import db_utils
-from config import env_config
 
-env_config.env = 'fat2'
 
 
 def query_source_category_by_id(category_id):
@@ -49,5 +47,4 @@ def get_market_option_config_info(category_id):
     return market_option_config_info
 
 
-get_market_option_config_info(8)
 

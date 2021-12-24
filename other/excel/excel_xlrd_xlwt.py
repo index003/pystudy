@@ -6,11 +6,11 @@ import xlwt
 book = xlrd.open_workbook('data_xlrd.xls')
 sheet1 = book.sheets()[0]
 
-nrows = sheet1.nrows
-print(nrows)
+n_rows = sheet1.nrows
+print(n_rows)
 
-ncols = sheet1.ncols
-print(ncols)
+n_cols = sheet1.ncols
+print(n_cols)
 
 row3_values = sheet1.row_values(2)
 print(row3_values)

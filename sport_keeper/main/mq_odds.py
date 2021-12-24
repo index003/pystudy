@@ -5,7 +5,7 @@ from rocket import message_body_odds
 from data import mq_basic
 
 # 配置环境 fat1，fat2，fat3,fat4,pre,prod
-env_config.env = 'fat1'
+env_config.env = 'fat2'
 
 
 # 发送早盘消息
@@ -45,7 +45,7 @@ def send_match_whole_markets_message(match_id, betting_phase):
         print("Please check params!")
 
 
-send_match_whole_markets_message(2055, 'pre')
+send_match_whole_markets_message(1773, 'inplay')
 
 
 # 推送单个玩法的消息
@@ -62,5 +62,5 @@ def send_match_market_message(match_id, market_id, betting_phase):
         print("Please check params!")
 
 
-send_match_market_message(2055, 1, 'dka')
+# send_match_market_message(2055, 1, 'dka')
 

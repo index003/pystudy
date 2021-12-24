@@ -14,3 +14,4 @@ delete from sport_match_operation_time where match_id = {}; -- 删除赛事操�
 delete from sport_permissions_info where type = 3 and permission_id  =  {}; -- 删除赛事分配信息
 delete from sport_market_change_info where match_id = {};
 delete from sport_match_result_check where match_id = {};
+delete from sport_i18n_info where type = 4 and buss_id = {};

@@ -42,7 +42,7 @@ def query_whole_markets_by_id(match_id):
     source_match_id = query_match_info_by_id(match_id)
     fixture_id = source_match_id[0][0]
     sql_query = ("select distinct market_id from ds_sport_market_bet_info "
-                 f"where fixture_id = {fixture_id} and provider_id = 8")
+                 f"where fixture_id = {fixture_id} and provider_id = 145")
     query_result = db_utils.get_data_db().query_execute(sql_query)
     return query_result
 
@@ -52,7 +52,7 @@ def query_match_market_option_by_id(fixture_id, market_id):
     sql_query = ("select bet_name, IFNULL(line,''), IFNULL(base_line,''), status, "
                  "CAST(start_price as CHAR) as start_price,"
                  "CAST(price as CHAR) as price "
-                 "from ds_sport_market_bet_info where provider_id = 8 and fixture_id = %s and market_id = %s")
+                 "from ds_sport_market_bet_info where provider_id = 145 and fixture_id = %s and market_id = %s")
     query_result = db_utils.get_data_db().query_execute(sql_query, fixture_id, market_id)
     return query_result
 
@@ -170,5 +170,4 @@ def get_match_basketball_player_name(match_id):
         print(f"there is not player market in the match {match_id}")
 
     return match_player_list
-
 
