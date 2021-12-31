@@ -1,18 +1,30 @@
+import json
 import time
-from collections import namedtuple
 from data import mq_basic
 
 
 def match_status_msg(match_id, status=2):
-    match_fields = [
-        "source", "locationId", "sportId", "leagueId", "fixtureId",
-        "homeTeamId", "awayTeamId", "status", "startDate", "lastUpdate"
-    ]
-    MatchMsg = namedtuple('MatchMsg', match_fields)
-    query_result = mq_basic.query_match_status_fields_by_id(match_id)
+    match_info = mq_basic.query_match_info_by_id(match_id)
+    source_category_id = mq_basic.get_category_source_id_by_id(match_id)
+    source_league_id = mq_basic.get_league_source_id_by_id(match_id)
+    fixture_id = mq_basic.get_fixture_id_by_id(match_id)
+    home_team_id = match_info[0][7]
+    away_team_id = match_info[0][8]
     current_millis = int(time.time() * 1000)
-    match_msg = MatchMsg('LSPORTS', 0, *query_result[0], status, current_millis, current_millis)
-    message_body = str(match_msg._asdict()).replace("'", '"')
+
+    match_fields = {
+        "source": 'LSPORTS',
+        "locationId": 0,
+        "sportId": source_category_id,
+        "leagueId": source_league_id,
+        "fixtureId": fixture_id,
+        "homeTeamId": home_team_id,
+        "awayTeamId": away_team_id,
+        "status": status,
+        "startDate": current_millis,
+        "lastUpdate": current_millis
+    }
+    message_body = json.dumps(match_fields)
     return message_body
 
 

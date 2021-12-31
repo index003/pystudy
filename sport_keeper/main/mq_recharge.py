@@ -10,4 +10,4 @@ def send_account_recharge(user_id, coin_name, amount):
     send_message.send_message_str("account_recharge", message_body)
 
 
-send_account_recharge('672822464', 'USDT', 350)
+send_account_recharge('491195673', 'USDT', 100)

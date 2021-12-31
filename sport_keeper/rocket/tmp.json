@@ -1,0 +1,133 @@
+{
+  "fixtureId": 7988057,
+  "source": "LSPORTS",
+  "markets": [
+    {
+      "id": 95,
+      "names": {},
+      "bets": [
+        {
+          "id": 0,
+          "name": "1",
+          "line": "1.5",
+          "baseLine": "1.5",
+          "status": 1,
+          "startPrice": "1.574",
+          "price": "1.574",
+          "settlement": "1",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "1",
+          "line": "1.0",
+          "baseLine": "1.0",
+          "status": 1,
+          "startPrice": "1.709",
+          "price": "1.709",
+          "settlement": "1",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "-1.0",
+          "baseLine": "1.0",
+          "status": 1,
+          "startPrice": "2.150",
+          "price": "2.150",
+          "settlement": "2",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "-1.5",
+          "baseLine": "1.5",
+          "status": 1,
+          "startPrice": "2.390",
+          "price": "2.390",
+          "settlement": "2",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "-0.5",
+          "baseLine": "0.5",
+          "status": 1,
+          "startPrice": "1.917",
+          "price": "1.917",
+          "settlement": "1",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "0.5",
+          "baseLine": "-0.5",
+          "status": 1,
+          "startPrice": "1.568",
+          "price": "1.568",
+          "settlement": "1",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "1",
+          "line": "0.5",
+          "baseLine": "0.5",
+          "status": 1,
+          "startPrice": "1.917",
+          "price": "1.917",
+          "settlement": "2",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "1",
+          "line": "-0.5",
+          "baseLine": "-0.5",
+          "status": 1,
+          "startPrice": "2.410",
+          "price": "2.410",
+          "settlement": "2",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "2",
+          "line": "0.0",
+          "baseLine": "0.0",
+          "status": 1,
+          "startPrice": "1.699",
+          "price": "1.699",
+          "settlement": "1",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        },
+        {
+          "id": 0,
+          "name": "1",
+          "line": "0.0",
+          "baseLine": "0.0",
+          "status": 1,
+          "startPrice": "2.160",
+          "price": "2.160",
+          "settlement": "2",
+          "lastUpdate": 1640846533471,
+          "lastUpdateTime": 1640846533471
+        }
+      ]
+    }
+  ],
+  "updateType": "SETTLEMENT"
+}

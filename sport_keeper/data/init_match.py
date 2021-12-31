@@ -2,7 +2,6 @@ import sys
 from data import db_utils
 
 
-
 def query_source_category_by_id(category_id):
     query_sql = "select * from sport_category_info where id = %s"
     query_result = db_utils.get_lottery_db().query_execute(query_sql, category_id)

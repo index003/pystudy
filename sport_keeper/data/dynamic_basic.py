@@ -1,5 +1,4 @@
 import json
-
 from data import db_utils
 
 

@@ -3,7 +3,7 @@ from rocket import message_body_score, send_message
 
 # 配置环境 fat1，fat2，fat3,fat4,pre,prod
 
-env_config.env = 'fat2'
+env_config.env = 'fat1'
 
 
 # 发送赛果比分消息
@@ -30,4 +30,4 @@ def send_score_message(match_id, score_type, *score):
         print("Please check params!")
 
 
-send_score_message(1773, 'live')
+send_score_message(2125, 'result')

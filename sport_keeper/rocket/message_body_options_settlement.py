@@ -3,11 +3,11 @@ import time
 from collections import namedtuple
 from data.mq_basic import query_match_market_option_by_id, get_fixture_id_by_id
 from config import env_config
-env_config.env = 'fat2'
+env_config.env = 'fat1'
 
 
-# 拼接赛事赔率变更的消息体
-# 拼接odds的bets域的消息
+# 拼接赛事结算的消息体
+# 拼接赛事结算的bets域的消息
 def create_messages_markets_bets(match_id, market_id):
     bets_fields = [
         "id",
@@ -53,7 +53,7 @@ def create_message_body(match_id, market_id):
     return json.dumps(message_body)
 
 
-message_body_tmp = create_message_body(1773, 21)
+message_body_tmp = create_message_body(2125, 95)
 print(message_body_tmp)
 '''
  "settlement": 
@@ -69,5 +69,7 @@ case 4:
     return PrizeType.HALF_LOST;
 case 5:
     return PrizeType.HALF_WIN;
+
+topic:match_market_bet_settlements
 '''
 
