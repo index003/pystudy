@@ -30,4 +30,4 @@ def send_score_message(match_id, score_type, *score):
         print("Please check params!")
 
 
-send_score_message(2125, 'result')
+send_score_message(2213, 'result')

@@ -2,7 +2,7 @@ from rocket import send_message
 from rocket import message_body_recharge
 from config import env_config
 
-env_config.env = 'fat2'
+env_config.env = 'fat1'
 
 
 def send_account_recharge(user_id, coin_name, amount):
@@ -10,4 +10,4 @@ def send_account_recharge(user_id, coin_name, amount):
     send_message.send_message_str("account_recharge", message_body)
 
 
-send_account_recharge('491195673', 'USDT', 100)
+send_account_recharge('609420462', 'USDT', 250)

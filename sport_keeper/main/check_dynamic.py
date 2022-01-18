@@ -3,7 +3,7 @@ from data import dynamic_basic
 from data import price_currency
 from config import env_config
 
-env_config.env = "fat2"
+env_config.env = "fat1"
 
 
 # 格式化输出
@@ -62,5 +62,6 @@ def check_dynamic_other_handicap_run(home_odds, bet_amount, k, other_odds_list):
 # show_match_market_info(1628)
 # check_dynamic_run(1.65, ex_to_dollar(100, 'usdt'), 27000, 1628, 18939, 'USD')
 # check_dynamic_two_handicap_run(1.77, ex_to_dollar(100, 'usdt'), 3500, 1.75)
-check_dynamic_two_handicap_run(1.77, 100, 3500, 1.75)
+# check_dynamic_two_handicap_run(1.77, 100, 3500, 1.75)
 # check_dynamic_other_handicap_run(1.65, ex_to_dollar(100, 'usdt'), 22000, [1.18, 1.16])
+ex_to_dollar(600, 'doge')

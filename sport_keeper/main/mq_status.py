@@ -2,7 +2,7 @@ from rocket import message_body_status
 from rocket import send_message
 from config import env_config
 
-env_config.env = 'fat2'
+env_config.env = 'fat1'
 
 
 def send_match_status_message(match_id, status=1):
@@ -12,7 +12,7 @@ def send_match_status_message(match_id, status=1):
     send_message.send_message_str('match_metadata_update', message_body)
 
 
-send_match_status_message(1773, 2)
+send_match_status_message(2136, 2)
 
 '''
 status:
