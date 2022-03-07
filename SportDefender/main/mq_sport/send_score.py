@@ -4,7 +4,7 @@ from task.rocket_mq.sport_message_body import match_score
 
 # 配置环境 fat1，fat2，fat3,fat4,pre,prod
 
-env_config.env = 'fat2'
+env_config.env = 'fat1'
 
 
 # 发送赛果比分消息
@@ -31,5 +31,5 @@ def send_score_message(match_id, score_type, *score):
         print("Please check params!")
 
 
-print(match_score.create_score_message_body(1957))
-send_score_message(1957, 'result')
+print(match_score.create_score_message_body(3039))
+send_score_message(3039, 'live')

@@ -1,7 +1,7 @@
 import time
 import requests
 import json
-from config import api_config
+from common.config import api_config
 
 
 # 获取赛事首页类别菜单信息，返回类别的详细信息

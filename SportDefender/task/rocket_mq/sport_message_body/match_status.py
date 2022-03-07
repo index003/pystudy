@@ -1,6 +1,7 @@
 import json
 import time
 from common.data import sport_data_interface
+from common.utils import timestamp
 
 
 def match_status_msg(match_id, status=2):
@@ -8,7 +9,8 @@ def match_status_msg(match_id, status=2):
     source_league_id = sport_data_interface.get_league_source_id_by_id(match_id)
     fixture_id = sport_data_interface.get_match_info_by_id(match_id, 'fixture_id')
     source_team_ids = sport_data_interface.get_team_info_by_id(match_id, 'source_team_id')
-    start_date = sport_data_interface.get_match_info_by_id(match_id, 'match_time')
+    start_date_time = sport_data_interface.get_match_info_by_id(match_id, 'match_time')
+    start_date = timestamp.time_to_unix(start_date_time)
     home_team_id = source_team_ids[0]
     away_team_id = source_team_ids[1]
     current_millis = int(time.time() * 1000)

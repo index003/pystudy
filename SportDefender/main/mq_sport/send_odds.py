@@ -52,10 +52,12 @@ def send_match_market_message(match_id, market_id, betting_phase):
 
 
 # mq消息体
-# odds.create_message_body(2748, 1)
-
+# message_body = market_odds.create_message_body(2903, 1)
+# print(message_body)
 # 推送单个玩法的消息
-# send_match_market_message(2207, 5, 'pre')
+send_match_market_message(3322, 1, 'pre')
+# send_match_market_message(2903, 1, 'inplay')
 
 # 推送某场赛事所有玩法的消息
-# send_match_whole_markets_message(2539, 'pre')
+# send_match_whole_markets_message(3039, 'pre')
+# send_match_whole_markets_message(3039, 'inplay')

@@ -13,8 +13,8 @@ def send_match_status_message(match_id, status=1):
     print(message_body)
 
 
-print(match_status.match_status_msg(2591, 1))
-# send_match_status_message(2591, 3)
+# print(match_status.match_status_msg(3039, 2))
+send_match_status_message(3039, 2)
 
 '''
 status:
