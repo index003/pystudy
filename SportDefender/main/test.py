@@ -20,3 +20,6 @@ print(ld + timedelta(days=10))  # LunarDate(2018, 7, 11, 0)
 today = LunarDate.today()
 print(today.strftime('%Y年%L%M月%D'))  # '二〇一八年六月廿六'
 print(today.strftime('今天的干支表示法为：%G'))  # '今天的干支表示法为：戊戌年庚申月辛未日'
+
+for i in range(1, 5):
+    print(i)
